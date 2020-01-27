@@ -16,8 +16,22 @@ namespace MainStore
         }
         protected Product createProduct(string type, string name, int price, int size) 
         {
+            // TODO: Exception handling
+            if (type.ToUpper().Equals("CD"))
+            {
+                CDProduct cDProduct = new CDProduct(name, price, size);
+                return cDProduct;
+            }
+            else if (type.ToUpper().Equals("BOOK"))
+            {
+                BookProduct bookProduct = new BookProduct(name, price, size);
+                return bookProduct;
+            }
+            else
+            {
+                return null;
+            }
             
-            return null;
         }
         public List<Product> loadProducts()
         {
