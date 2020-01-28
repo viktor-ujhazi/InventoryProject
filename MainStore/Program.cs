@@ -7,8 +7,7 @@ namespace MainStore
         static void Main(string[] args)
         {
             StoreManager storeManager = new StoreManager();
-            PersistentStore persistentStore = new PersistentStore();
-            storeManager.addStorage(persistentStore);
+            storeManager.addStorage(new PersistentStore());
             while (true)
             {
                 Console.WriteLine("(1) Add product");

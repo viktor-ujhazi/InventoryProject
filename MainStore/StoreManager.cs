@@ -6,23 +6,23 @@ namespace MainStore
 {
     class StoreManager
     {
-        private StorageCapable Storage { get; set; }
+        private StorageCapable storage;//{ get; set; }
         public void addStorage(StorageCapable storage) 
         {
-            Storage = storage;
+            this.storage = storage;
         }
         public void addCDProduct(string name, int price, int tracks) 
         {
-            Storage.storeCDProduct(name, price, tracks);
+            storage.storeCDProduct(name, price, tracks);
         }
         public void addBookProduct(string name, int price, int pages) 
         {
-            Storage.storeBookProduct(name, price, pages);
+            storage.storeBookProduct(name, price, pages);
         }
         public String listProducts() 
         {
             string result = "";
-            List<Product> products = Storage.getAllProduct();
+            List<Product> products = storage.getAllProduct();
             foreach (var product in products)
             {
                 result += product; 
@@ -32,7 +32,7 @@ namespace MainStore
         public int getTotalProductPrice()
         {
             int result = 0;
-            foreach (var product in Storage.getAllProduct())
+            foreach (var product in storage.getAllProduct())
             {
                 result += product.getPrice();
             }
