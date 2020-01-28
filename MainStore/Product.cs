@@ -14,5 +14,9 @@ namespace MainStore
             Name = name;
             Price = price;
         }
+        public int getPrice()
+        {
+            return Price;
+        }
     }
 }

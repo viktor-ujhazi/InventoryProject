@@ -26,7 +26,12 @@ namespace MainStore
         }
         public int getTotalProductPrice()
         {
-            return 0;
+            int result = 0;
+            foreach (var product in Storage.getAllProduct())
+            {
+                result += product.getPrice();
+            }
+            return result;
         }
 
     }
