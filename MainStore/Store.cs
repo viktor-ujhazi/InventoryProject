@@ -6,14 +6,13 @@ namespace MainStore
 {
     abstract class Store : StorageCapable
     {
-        private List<Product> products { get; set; }
+        
         private void saveToXml(Product product) 
         {
+
         }
-        protected void storeProduct(Product product) 
-        {
-            products.Add(product);
-        }
+        public abstract void storeProduct(Product product);
+        
         protected Product createProduct(string type, string name, int price, int size) 
         {
             // TODO: Exception handling
@@ -38,22 +37,14 @@ namespace MainStore
             return null;
         }
         public void store(Product product) 
-        { 
+        {
+            saveToXml(product);
+            storeProduct(product);
         }
 
-        public List<Product> getAllProduct()
-        {
-            return products;
-        }
-
-        public void storeCDProduct(string name, int price, int tracks)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void storeBookProduct(string name, int price, int pages)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract List<Product> getAllProduct();
+        public abstract void storeCDProduct(string name, int price, int tracks);
+        public abstract void storeBookProduct(string name, int price, int pages);
+        
     }
 }
