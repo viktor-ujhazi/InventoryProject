@@ -13,5 +13,11 @@ namespace MainStore
 
             NumOfPages = numOfPages;
         }
+        public override String ToString()
+        {
+            string resultString = base.ToString() + $"Number of pages: {NumOfPages}\n";
+
+            return resultString;
+        }
     }
 }

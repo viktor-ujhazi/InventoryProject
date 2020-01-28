@@ -18,5 +18,11 @@ namespace MainStore
         {
             return Price;
         }
+        public override String ToString()
+        {
+            string resultString = $"\nName: {Name}\nPrice: {Price}\n";
+            
+            return resultString;
+        }
     }
 }

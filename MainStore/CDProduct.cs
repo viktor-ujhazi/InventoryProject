@@ -13,5 +13,11 @@ namespace MainStore
             
             NumOfTracks = numOfTracks; 
         }
+        public override String ToString() 
+        {
+            string resultString = base.ToString() + $"Number of tracks: {NumOfTracks}\n";
+
+            return resultString;
+        }
     }
 }
