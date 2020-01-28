@@ -21,8 +21,13 @@ namespace MainStore
         }
         public String listProducts() 
         {
-            
-            return "";
+            string result = "";
+            List<Product> products = Storage.getAllProduct();
+            foreach (var product in products)
+            {
+                result += product; 
+            }
+            return result;
         }
         public int getTotalProductPrice()
         {
